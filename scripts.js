@@ -24,10 +24,10 @@ function makeBoard() {
 function toggleColor(event) {
     var cardClasses = event.target.classList
     if (cardClasses.contains("card")) {
-        if (cardClasses.contains("light-red")){
-            cardClasses.remove("light-red")
+        if (cardClasses.contains("green")){
+            cardClasses.remove("green")
         } else {
-            cardClasses.add("light-red")
+            cardClasses.add("green")
         }
     }
 }
