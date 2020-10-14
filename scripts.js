@@ -4,18 +4,31 @@
 
 window.onload = function(event) {
     makeBoard()
+    document.addEventListener("click", toggleColor)
+    
 };
 
 function makeBoard() {
     var boardElement = document.getElementById('board')
-    var number = 1
-    var currentRow = 1
-    let board = "<hr>"
-    for (i = number; i <= 100; i++) {
-        board += "<span>" + i + "</span> "
-        if (i % 10 === 0) {
-            board += "</br>"
+    boardElement.style.setProperty('--grid-rows', 10);
+    boardElement.style.setProperty('--grid-cols', 10);
+    for (i = 0; i < 100; i++) {
+        var cell = document.createElement("div")
+        cell.className = "card grid-item"
+        cell.innerText = i+1
+        cell.setAttribute("onClick","toggleColor")
+        boardElement.appendChild(cell)
+    }
+}
+
+function toggleColor(event) {
+    var cardClasses = event.target.classList
+    if (cardClasses.contains("card")) {
+        if (cardClasses.contains("green")){
+            cardClasses.remove("green")
+        } else {
+            cardClasses.add("green")
         }
     }
-    boardElement.innerHTML = board
+    // event.target.classList
 }
