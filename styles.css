@@ -5,7 +5,7 @@ body {
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
-  }
+}
 
 #board {
     display: grid;
@@ -13,15 +13,20 @@ body {
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     padding: 40px;
-  }
+}
 
 .grid-item {
-    padding: 1em;
+    padding: 0.5em;
     border: 1px solid #ddd;
     text-align: center;
-  }
+    font-size: 1.5rem;
+}
 
-  .green {
-    background-color: #48c774;
+.light-red {
+    background-color: #ff3860;
     color: #fff;
+}
+
+.center {
+    text-align: center;
 }

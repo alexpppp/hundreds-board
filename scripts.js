@@ -5,11 +5,11 @@
 window.onload = function(event) {
     makeBoard()
     document.addEventListener("click", toggleColor)
-    
 };
 
 function makeBoard() {
     var boardElement = document.getElementById('board')
+    boardElement.innerText = null
     boardElement.style.setProperty('--grid-rows', 10);
     boardElement.style.setProperty('--grid-cols', 10);
     for (i = 0; i < 100; i++) {
@@ -24,11 +24,10 @@ function makeBoard() {
 function toggleColor(event) {
     var cardClasses = event.target.classList
     if (cardClasses.contains("card")) {
-        if (cardClasses.contains("green")){
-            cardClasses.remove("green")
+        if (cardClasses.contains("light-red")){
+            cardClasses.remove("light-red")
         } else {
-            cardClasses.add("green")
+            cardClasses.add("light-red")
         }
     }
-    // event.target.classList
 }
